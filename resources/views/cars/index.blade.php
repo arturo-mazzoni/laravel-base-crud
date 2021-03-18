@@ -15,24 +15,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
+      @foreach ($automobili as $automobile)
+        <tr>
+          <th scope="row">{{ $automobile->id }}</th>
+          <td>{{ $automobile->marca }}</td>
+          <td>{{ $automobile->modello }}</td>
+          <td>{{ $automobile->cilindrata }}</td>
+          <td>{{ $automobile->prezzo }}</td>
+          <td><a href="">Dettagli</a></td>
+        </tr>
+      @endforeach
     </tbody>
   </table>
 @endsection
