@@ -51,7 +51,18 @@ class CarController extends Controller
      */
     public function show($id)
     {
-        //
+        $automobile_sel = Car::find($id);
+
+        if ($automobile_sel) {
+
+            $data = [
+                'automobile' => $automobile_sel
+            ];
+
+            return view('cars.show', $data);
+        }
+
+        abort('404');
     }
 
     /**

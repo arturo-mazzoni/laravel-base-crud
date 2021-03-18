@@ -17,16 +17,14 @@
       </tr>
     </thead>
     <tbody>
-      @foreach ($automobili as $automobile)
         <tr>
           <th scope="row">{{ $automobile->id }}</th>
           <td>{{ $automobile->marca }}</td>
           <td>{{ $automobile->modello }}</td>
           <td>{{ $automobile->cilindrata }}</td>
           <td>{{ $automobile->prezzo }}</td>
-          <td><a href="{{ route('cars.show', ['car'=> $automobile->id]) }}">Dettagli</a></td>
+          <td>{{ $automobile->descrizione }}</td>
         </tr>
-      @endforeach
     </tbody>
   </table>
 @endsection
