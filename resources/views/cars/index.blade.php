@@ -5,6 +5,7 @@
 @section('content')
 
   <h1>Elenco Automobili</h1>
+  <a href="{{ route('cars.create') }}">Inserisci una nuova auto</a>
   <table class="table">
     <thead>
       <tr>
