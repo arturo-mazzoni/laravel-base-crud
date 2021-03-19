@@ -19,6 +19,7 @@ class CarController extends Controller
         $data = [
             'automobili' => $automobili_sel
         ];
+        
         return view('cars.index', $data);
     }
 
