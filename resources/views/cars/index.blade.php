@@ -14,7 +14,7 @@
         <th scope="col">Modello</th>
         <th scope="col">Cilindrata</th>
         <th scope="col">Prezzo</th>
-        <th scope="col">Descrizione</th>
+        <th scope="col">Operazioni</th>
       </tr>
     </thead>
     <tbody>
@@ -25,7 +25,10 @@
           <td>{{ $automobile->modello }}</td>
           <td>{{ $automobile->cilindrata }}</td>
           <td>{{ $automobile->prezzo }}</td>
-          <td><a href="{{ route('cars.show', ['car'=> $automobile->id]) }}">Dettagli</a></td>
+          <td>
+            <a href="{{ route('cars.show', ['car'=> $automobile->id]) }}" class="btn btn-info">Dettagli</a>
+            <a href="{{ route('cars.edit', ['car'=> $automobile->id]) }}" class="btn btn-warning">Modifica</a>
+          </td>
         </tr>
       @endforeach
     </tbody>
