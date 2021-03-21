@@ -7,7 +7,7 @@
   <h1>Gestione Automobili</h1>
 
   <div class="container">
-    <form method="post">
+    <form method="post" action="{{ route('cars.store') }}">
       @method('POST')
       @csrf
       <div class="form-group">
@@ -17,7 +17,7 @@
       </div>
       <div class="form-group">
         <label for="exampleInputmodello">Modello</label>
-        <input type="text" class="form-control" id="exampleInputmodello" name="Modello">
+        <input type="text" class="form-control" id="exampleInputmodello" name="modello">
       </div>
       <div class="form-group">
         <label for="exampleInputcilindrata">Cilindrata</label>

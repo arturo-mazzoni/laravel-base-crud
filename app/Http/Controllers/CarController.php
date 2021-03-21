@@ -19,7 +19,7 @@ class CarController extends Controller
         $data = [
             'automobili' => $automobili_sel
         ];
-        
+
         return view('cars.index', $data);
     }
 
@@ -41,7 +41,20 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $carNew = new Car();
+        // $carNew->marca = $data['marca'];
+        // $carNew->modello = $data['modello'];
+        // $carNew->cilindrata = $data['cilindrata'];
+        // $carNew->prezzo = $data['prezzo'];
+        // $carNew->descrizione = $data['descrizione'];
+        $carNew->fill($data);
+
+        $carNew->save();
+
+        // return redirect()->route('cars.index');
+        return redirect()->route('cars.show',$carNew->find($carNew->id));
     }
 
     /**
