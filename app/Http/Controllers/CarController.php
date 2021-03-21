@@ -43,6 +43,14 @@ class CarController extends Controller
     {
         $data = $request->all();
 
+        $request->validate([
+            'marca' => 'required|max:50',
+            'modello' => 'required|unique:cars|max:50',
+            'cilindrata' => 'required|max:4',
+            'prezzo' => 'required|max:10',
+            'descrizione' => 'required',
+        ]);
+
         $carNew = new Car();
         // $carNew->marca = $data['marca'];
         // $carNew->modello = $data['modello'];
