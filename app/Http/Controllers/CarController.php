@@ -71,14 +71,14 @@ class CarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Car $cars)
+    public function show(Car $car)
     {
         // $automobile_sel = Car::find($id);
 
-        if ($automobile_sel) {
+        if ($car) {
 
             $data = [
-                'automobile' => $automobile_sel
+                'automobile' => $car
             ];
 
             return view('cars.show', $data);
