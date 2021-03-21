@@ -26,8 +26,13 @@
           <td>{{ $automobile->cilindrata }}</td>
           <td>{{ $automobile->prezzo }}</td>
           <td>
-            <a href="{{ route('cars.show', ['car'=> $automobile->id]) }}" class="btn btn-info">Dettagli</a>
-            <a href="{{ route('cars.edit', ['car'=> $automobile->id]) }}" class="btn btn-warning">Modifica</a>
+            <a href="{{ route('cars.show', $automobile->id) }}" class="btn btn-info">Dettagli</a>
+            <a href="{{ route('cars.edit', $automobile->id) }}" class="btn btn-warning">Modifica</a>
+            <form action="{{ route('cars.destroy', $automobile->id) }}" method="post" class="d-inline-block">
+              @csrf
+              @method('DELETE')
+              <button class="btn btn-danger">Delete</button>
+            </form>
           </td>
         </tr>
       @endforeach
